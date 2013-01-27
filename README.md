@@ -10,7 +10,11 @@ Install it with:
 
 ## Usage
 
-To test it out, run yapura examples/simple_definition.rb ruby to see ruby code dumped to your console.  Pipe it to a file to save it.
+To test it out, run 
+    
+    $ yapura examples/simple_definition.rb ruby 
+
+to see ruby code dumped to your console.  Pipe it to a file to save it.
 
 ## Contributing
 
