@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+#TODO: This file needs to be made way more robust probably using Thor gem
+
+require 'yapura'
+
+puts 'cli start'
+
+target = ARGV[0]
+language = ARGV[1]
+
+eval(File.new(target).read)
+
+language_class = "Yapura::Lang::#{language.capitalize}::Generator"
+
+Yapura.parse(language_class.split('::').reduce(Module, :const_get).new)
