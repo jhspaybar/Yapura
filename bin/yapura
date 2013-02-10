@@ -4,8 +4,6 @@
 
 require 'yapura'
 
-puts 'cli start'
-
 target = ARGV[0]
 language = ARGV[1]
 

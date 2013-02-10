@@ -2,6 +2,8 @@ require "yapura/version"
 require "yapura/namespace"
 require "yapura/structure"
 require "yapura/data_type"
+require "yapura/enum"
+require "yapura/list"
 require "yapura/lang/lang"
 
 module Yapura
@@ -19,6 +21,10 @@ module Yapura
 
   def structure(*args, &block)
     self.children << Structure.new(*args, &block)
+  end
+
+  def enum(*args, &block)
+    self.children << Enum.new(*args, &block)
   end
 
   def parse(block = nil)

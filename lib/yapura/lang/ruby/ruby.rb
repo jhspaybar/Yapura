@@ -34,7 +34,21 @@ module Yapura
           puts "#{indent}end"
         end
 
+        def enum(node)
+          puts "#{indent}module #{node.name.capitalize}"
+          self.level += 1
+          node.children.each do |name, value|
+            puts "#{indent}#{name} = #{value}"
+          end
+          self.level -= 1
+          puts "#{indent}end"
+        end
+
         def datatype(node)
+          puts "#{indent}attr_accessor :#{node.name}"
+        end
+
+        def list(node)
           puts "#{indent}attr_accessor :#{node.name}"
         end
 
